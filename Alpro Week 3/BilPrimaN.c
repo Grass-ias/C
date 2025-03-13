@@ -5,66 +5,40 @@
 
 #include <stdio.h> /*Header file*/
 
-/*Notasi Algoritmik*/
-/*Program : BilPrimaN*/
-/*Menampilkan semua bilangan prima sampai N*/
-
-/*Kamus*/
-/*N : integer   { Batas bilangan }*/
-/*i, j : integer   { Counter untuk iterasi }*/
-/*prima : boolean  { Menyatakan apakah suatu bilangan adalah prima }*/
-
-/*Algoritma*/
-/*input(N)*/
-/*i = 2*/
-/*while i <= N do*/
-/*    prima = true*/
-/*    j = 2*/
-/*    while j * j <= i do*/
-/*        if (i mod j = 0) then*/
-/*            prima = false*/
-/*            break*/
-/*        j = j + 1*/
-/*    if prima then*/
-/*        output(i)*/
-/*    i = i + 1*/
-
 int main() {
     /*Kamus*/
-    int N, i, j;
-    int prima;
+    int N, i, j, faktor;
 
     /*Algoritma*/
     printf("Masukkan bilangan N: ");
     scanf("%d", &N);
 
-    if (N <= 0) {
-        printf("N harus lebih besar dari 0!\n");
-        return 1;
-    }
+    if (N > 0) {
+        printf("Bilangan Prima sampai %d adalah: ", N);
 
-    printf("Bilangan Prima sampai %d adalah: ", N);
-    
-    i = 2; // Inisialisasi bilangan pertama yang dicek
-    while (i <= N) {
-        prima = 1; // Asumsikan i adalah bilangan prima
-        j = 2;
+        i = 2; // Inisialisasi bilangan pertama yang dicek
+        while (i <= N) {
+            faktor = 0; // Reset faktor untuk setiap bilangan i
+            j = 1;
 
-        while (j * j <= i) { // Mengecek faktor dari 2 hingga akar i
-            if (i % j == 0) {
-                prima = 0;
-                break;
+            while (j <= i) { // Cek faktor dari 1 sampai i
+                if (i % j == 0) {
+                    faktor++;
+                }
+                j++; // Increment j
             }
-            j++; // Increment j
+
+            if (faktor == 2) { // Bilangan prima hanya memiliki 2 faktor (1 dan dirinya sendiri)
+                printf("%d ", i);
+            }
+
+            i++; // Increment i ke bilangan berikutnya
         }
 
-        if (prima) {
-            printf("%d ", i);
-        }
-
-        i++; // Increment i ke bilangan berikutnya
+        printf("\n");
+    } else {
+        printf("N harus lebih besar dari 0!\n");
     }
 
-    printf("\n");
     return 0;
 }
