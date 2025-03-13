@@ -1,27 +1,13 @@
-/*Nama File     : FaktorBil.c*/
-/*Deskripsi     : Menentukan faktor bilangan dari N*/
-/*Pembuat       : 24060124140145/Ferdy Prasetya Putra*/
-/*Tgl Pembuatan : 06/03/2025 08:15*/
+/*Nama File    : JumDeret.c*/
+/*Deskripsi    : Menghitung jumlah total dari deret bilangan 1 + 2 + ... + N*/
+/*Pembuat      : 24060124140145/Ferdy Prasetya Putra*/
+/*Tgl Pembuatan: 06/03/2025 08:15*/
 
-#include <stdio.h> /*Header file*/
-
-/*Notasi Algoritmik*/
-/*Program : FaktorBil*/
-/*Menentukan faktor bilangan dari N*/
-
-/*Kamus*/
-/*N : integer   { Bilangan yang akan dicari faktornya }*/
-/*i : integer   { Counter untuk mencari faktor }*/
-
-/*Algoritma*/
-/*input(N)*/
-/*for i = 1 to N do*/
-/*    if (N mod i = 0) then*/
-/*        output(i)*/
+#include <stdio.h>
 
 int main() {
     /*Kamus*/
-    int N, i;
+    int N, i, jumlah;
 
     /*Algoritma*/
     printf("Masukkan bilangan N: ");
@@ -32,12 +18,14 @@ int main() {
         return 1;
     }
 
-    printf("Faktor bilangan dari %d adalah: ", N);
-    for (i = 1; i <= N; i++) {
-        if (N % i == 0) {
-            printf("%d ", i);
-        }
+    jumlah = 0;
+    i = 1;
+
+    while (i <= N) {
+        jumlah += i;
+        i++;
     }
 
+    printf("Jumlah deret dari 1 sampai %d adalah: %d\n", N, jumlah);
     return 0;
 }
