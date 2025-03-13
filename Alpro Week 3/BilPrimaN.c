@@ -7,37 +7,32 @@
 
 int main() {
     /*Kamus*/
-    int N, i, j, faktor;
+    int N, i, j, faktor; // Perbaikan: Menggunakan 'faktor' bukan 'counter'
 
     /*Algoritma*/
     printf("Masukkan bilangan N: ");
     scanf("%d", &N);
 
-    if (N > 0) {
-        printf("Bilangan Prima sampai %d adalah: ", N);
-
-        i = 2; // Inisialisasi bilangan pertama yang dicek
+    if (N <= 0) {
+        printf("Masukan harus lebih dari 0\n");
+    } else {
+        printf("Bilangan Primanya adalah: ");
+        i = 2;
         while (i <= N) {
-            faktor = 0; // Reset faktor untuk setiap bilangan i
+            faktor = 0; // Perbaikan: Menggunakan 'faktor'
             j = 1;
-
-            while (j <= i) { // Cek faktor dari 1 sampai i
+            while (j <= i) {
                 if (i % j == 0) {
                     faktor++;
                 }
-                j++; // Increment j
+                j++;
             }
-
-            if (faktor == 2) { // Bilangan prima hanya memiliki 2 faktor (1 dan dirinya sendiri)
+            if (faktor == 2) {
                 printf("%d ", i);
             }
-
-            i++; // Increment i ke bilangan berikutnya
+            i++;
         }
-
         printf("\n");
-    } else {
-        printf("N harus lebih besar dari 0!\n");
     }
 
     return 0;
