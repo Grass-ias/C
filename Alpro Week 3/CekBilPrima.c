@@ -17,9 +17,11 @@
 /*Algoritma*/
 /*input(N)*/
 /*faktor = 0*/
-/*for i = 1 to N do*/
+/*i = 1*/
+/*while i <= N do*/
 /*    if (N mod i = 0) then*/
 /*        faktor = faktor + 1*/
+/*    i = i + 1*/
 /*if faktor = 2 then*/
 /*    output("Bilangan Prima")*/
 /*else*/
@@ -29,6 +31,7 @@ int main() {
     /*Kamus*/
     int N, i, faktor;
     faktor = 0;
+    i = 1;
 
     /*Algoritma*/
     printf("Masukkan bilangan N: ");
@@ -39,11 +42,12 @@ int main() {
         return 1;
     }
 
-    // Menghitung jumlah faktor dari N
-    for (i = 1; i <= N; i++) {
+    // Menghitung jumlah faktor dari N menggunakan while loop
+    while (i <= N) {
         if (N % i == 0) {
             faktor++;
         }
+        i++;
     }
 
     // Bilangan prima hanya memiliki 2 faktor: 1 dan dirinya sendiri
