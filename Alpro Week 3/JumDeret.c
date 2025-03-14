@@ -5,24 +5,6 @@
 
 #include <stdio.h> /*Header file*/
 
-/*Notasi Algoritmik*/
-/*Program : JumDeret*/
-/*Menjumlahkan deret bilangan dari 1 sampai N*/
-
-/*Kamus*/
-/*N : integer   { Batas bilangan }*/
-/*i : integer   { Counter untuk iterasi }*/
-/*jumlah : integer   { Menyimpan hasil penjumlahan }*/
-
-/*Algoritma*/
-/*input(N)*/
-/*jumlah = 0*/
-/*i = 1*/
-/*while i <= N do*/
-/*    jumlah = jumlah + i*/
-/*    i = i + 1*/
-/*output(jumlah)*/
-
 int main() {
     /*Kamus*/
     int N, i, jumlah;
@@ -33,17 +15,18 @@ int main() {
 
     if (N <= 0) {
         printf("N harus lebih besar dari 0!\n");
-        return 1;
+    } else {
+        jumlah = 0;
+        i = 1;
+
+        while (i <= N) {
+            jumlah += i;
+            i++;
+        }
+
+        printf("Jumlah deret dari 1 sampai %d adalah: %d\n", N, jumlah);
     }
-
-    jumlah = 0;
-    i = 1;
-
-    while (i <= N) {
-        jumlah += i;
-        i++;
-    }
-
-    printf("Jumlah deret dari 1 sampai %d adalah: %d\n", N, jumlah);
+    
     return 0;
 }
+
