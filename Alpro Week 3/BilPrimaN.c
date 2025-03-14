@@ -7,7 +7,7 @@
 
 int main() {
     /*Kamus*/
-    int N, i, j, faktor; // Perbaikan: Menggunakan 'faktor' bukan 'counter'
+    int N, i, j, faktor;
 
     /*Algoritma*/
     printf("Masukkan bilangan N: ");
@@ -19,7 +19,7 @@ int main() {
         printf("Bilangan Primanya adalah: ");
         i = 2;
         while (i <= N) {
-            faktor = 0; // Perbaikan: Menggunakan 'faktor'
+            faktor = 0;
             j = 1;
             while (j <= i) {
                 if (i % j == 0) {
