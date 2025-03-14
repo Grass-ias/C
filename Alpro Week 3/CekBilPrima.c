@@ -5,28 +5,6 @@
 
 #include <stdio.h> /*Header file*/
 
-/*Notasi Algoritmik*/
-/*Program : CekBilPrima*/
-/*Menentukan apakah bilangan N adalah bilangan prima*/
-
-/*Kamus*/
-/*N : integer   { Bilangan yang akan diperiksa }*/
-/*i : integer   { Counter untuk mencari faktor }*/
-/*faktor : integer   { Menyimpan jumlah faktor bilangan }*/
-
-/*Algoritma*/
-/*input(N)*/
-/*faktor = 0*/
-/*i = 1*/
-/*while i <= N do*/
-/*    if (N mod i = 0) then*/
-/*        faktor = faktor + 1*/
-/*    i = i + 1*/
-/*if faktor = 2 then*/
-/*    output("Bilangan Prima")*/
-/*else*/
-/*    output("Bukan Bilangan Prima")*/
-
 int main() {
     /*Kamus*/
     int N, i, faktor;
@@ -39,23 +17,21 @@ int main() {
 
     if (N <= 0) {
         printf("N harus lebih besar dari 0!\n");
-        return 1;
-    }
-
-    // Menghitung jumlah faktor dari N menggunakan while loop
-    while (i <= N) {
-        if (N % i == 0) {
-            faktor++;
-        }
-        i++;
-    }
-
-    // Bilangan prima hanya memiliki 2 faktor: 1 dan dirinya sendiri
-    if (faktor == 2) {
-        printf("%d adalah Bilangan Prima\n", N);
     } else {
-        printf("%d adalah Bukan Bilangan Prima\n", N);
+        while (i <= N) {
+            if (N % i == 0) {
+                faktor++;
+            }
+            i++;
+        }
+
+        if (faktor == 2) {
+            printf("%d adalah Bilangan Prima\n", N);
+        } else {
+            printf("%d adalah Bukan Bilangan Prima\n", N);
+        }
     }
 
     return 0;
 }
+
